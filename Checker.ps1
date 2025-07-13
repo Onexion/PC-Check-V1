@@ -1,5 +1,5 @@
 
-$configJson = Invoke-RestMethod -Uri "https://raw.githubusercontent.com/Brevzor/SecurityCheck/refs/heads/main/cfg.json" 
+$configJson = Invoke-RestMethod -Uri "https://raw.githubusercontent.com/Onexion/PC-Check-V1/refs/heads/main/cfg.json" 
 $Astra = $configJson.Astra
 $EntryPoint = $configJson.EntryPoint
 $FilesizeH = $configJson.FilesizeH
