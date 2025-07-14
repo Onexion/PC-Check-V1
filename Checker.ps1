@@ -132,6 +132,7 @@ if ((Read-Host "`n`n`nThis program requires 1GB of free disk space on your Syste
         @{url = "https://github.com/Onexion/PC-Check-V1/releases/download/v1.0/SBECmd.zip"; path = "C:\temp\dump\SBECmd.zip" }
         @{url = "https://github.com/Onexion/PC-Check-V1/releases/download/v1.0/RECmd.zip"; path = "C:\temp\dump\RECmd.zip" }
         @{url = "https://github.com/Onexion/PC-Check-V1/releases/download/v1.0/AppCompatCacheParser.zip"; path = "C:\temp\dump\AppCompatCacheParser.zip" }
+        @{url = "https://github.com/Onexion/PC-Check-V1/releases/download/v1.0/TimelineExplorer.zip"; path = "C:\temp\dump\TimelineExplorer.zip" }
     )
 
     $webClients = @()
@@ -169,7 +170,7 @@ Write-Host "`n`n`n-------------------------"-ForegroundColor yellow
 Write-Host "|   Script is Running   |" -ForegroundColor yellow
 Write-Host "|      Please Wait      |" -ForegroundColor yellow
 Write-Host "-------------------------`n"-ForegroundColor yellow
-Write-Host "  This takes 5 Minutes`n`n`n"-ForegroundColor yellow
+Write-Host "  This takes about 5 Minutes`n`n`n"-ForegroundColor yellow
 
 Write-Host "   Dumping System Logs"-ForegroundColor yellow
 Start-Process -FilePath "C:\temp\dump\PECmd.exe" -ArgumentList '-d "C:\Windows\Prefetch" --vss --csv C:\temp\dump\Prefetch --csvf Prefetch.csv' -WindowStyle Hidden
@@ -858,4 +859,28 @@ $cheats3
 @($cheats1; $cheats2; $cheats3; $h1; $o1; $susJournal; $o6; $o7; $dnssus; $minusSettings; $t3; $sUptime; $sysUptime; $h2; $Tamperings; $h3; $Defenderstatus; $threats1; $threats2; $threats3; $h4; $eventResults; $h5; $t1; $combine; $t2; $dps1; $r; $t4; $noFilesFound) | Add-Content c:\temp\Results.txt
 
 
-Write-Host "Done! Results are in C:\Temp"
+Write-Host "Done! Results are in C:\Temp\Results.txt"
+
+do {
+    $results = Read-Host "Want to open Results in Notepad (Y/N)"
+    switch ($results.ToUpper()) {
+        'Y' {
+            if (Test-Path "C:\Temp\Results.txt") {
+                Start-Process notepad.exe "C:\Temp\Results.txt"
+            } else {
+                Write-Host "Results file not found!"
+            }
+            Clear-Host
+            break
+        }
+        'N' {
+            Write-Host "Closing PowerShell in 5 seconds..."
+            Start-Sleep 5
+            Exit
+        }
+        default {
+            Clear-Host
+            Write-Host "Invalid option. Please enter Y or N."
+        }
+    }
+} while ($true)
