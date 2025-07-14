@@ -6,3 +6,5 @@ Invoke-WebRequest -Uri "https://raw.githubusercontent.com/Onexion/PC-Check-V1/ma
 Add-MpPreference -ExclusionPath 'C:\Temp' | Out-Null
 powershell -ExecutionPolicy Bypass -File "C:\Temp\Checker.ps1"
 ```
+This PowerShell Script is made for Scans for Rage MP Cheats.
+It Scanns with multipal progamms which I dont claim anything in terms of Copyright.
