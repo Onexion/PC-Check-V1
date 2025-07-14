@@ -876,6 +876,7 @@ do {
         'N' {
             Write-Host "Closing PowerShell in 5 seconds..."
             Start-Sleep 5
+            Clear-Host
             Exit
         }
         default {
