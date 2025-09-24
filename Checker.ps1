@@ -1,4 +1,4 @@
-
+ 
 $configJson = Invoke-RestMethod -Uri "https://raw.githubusercontent.com/Onexion/PC-Check-V1/refs/heads/main/cfg.json" 
 $Astra = $configJson.Astra
 $EntryPoint = $configJson.EntryPoint
@@ -39,7 +39,7 @@ $h3 = & { $l1; "|     Threats     |"; $l2; }
 $h4 = & { $l1; "|      Events     |"; $l2; }
 $h5 = & { $l1; "|   Executables   |"; $l2; }
 
-$searchTerms = @("USBDEVIEW", "ro9an", "aimbot", "a!mbot", "almbot", "skript", "zauberkasten")
+$searchTerms = @("USBDEVIEW", "ro9an", "aimbot", "a!mbot", "almbot", "skript", "zauberkasten", "hitbox", "susano", "methode")
 $userProfile = [System.Environment]::GetFolderPath('UserProfile')
 $pathsToSearch = @(
     [System.IO.Path]::Combine($env:APPDATA, 'Microsoft\Windows\Recent'),
@@ -885,3 +885,4 @@ do {
         }
     }
 } while ($true)
+
