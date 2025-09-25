@@ -39,7 +39,7 @@ $h3 = & { $l1; "|     Threats     |"; $l2; }
 $h4 = & { $l1; "|      Events     |"; $l2; }
 $h5 = & { $l1; "|   Executables   |"; $l2; }
 
-$searchTerms = @("USBDEVIEW", "ro9an", "aimbot", "a!mbot", "almbot", "skript", "zauberkasten", "hitbox", "susano", "methode", "eulen", "infinity", "karma", "methode", "flux", "menü", "lynx", "impulse", "config", "softaim")
+$searchTerms = @("USBDEVIEW", "ro9an", "aimbot", "a!mbot", "almbot", "skript", "zauberkasten", "hitbox", "susano", "methode", "eulen", "infinity", "karma", "methode", "flux", "menü", "lynx", "impulse", "softaim")
 $userProfile = [System.Environment]::GetFolderPath('UserProfile')
 $pathsToSearch = @(
     [System.IO.Path]::Combine($env:APPDATA, 'Microsoft\Windows\Recent'),
@@ -885,5 +885,6 @@ do {
         }
     }
 } while ($true)
+
 
 
